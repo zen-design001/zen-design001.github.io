@@ -1,0 +1,137 @@
+/* --------------------
+        全体
+-------------------- */
+
+:root {
+  /* テクノロジー感のある鮮やかなブルーに変更 */
+  --theme-color: #0066cc;
+  /* 背景を少しだけグレーにして文字を読みやすく */
+  --bg-color: #f8f9fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  max-width: 800px; /* 横に広がりすぎないように制限 */
+  margin: 0 auto;   /* 画面の中央に配置 */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+  background-color: var(--bg-color);
+  line-height: 1.6;
+}
+
+/* --------------------
+        見出し
+-------------------- */
+
+h1 {
+  font-size: 2.5rem;
+  color: #111;
+  border-bottom: 3px solid var(--theme-color); /* メインタイトルは太い実線で引き締め */
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: var(--theme-color);
+  border-bottom: 2px solid var(--theme-color); /* h2はすっきりした実線 */
+  padding-bottom: 5px;
+  margin-top: 40px;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: #444;
+  border-bottom: none; /* h3の下線は無くして、左側にアクセント線を配置 */
+  border-left: 4px solid var(--theme-color);
+  padding-left: 10px;
+  margin-top: 30px;
+}
+
+/* --------------------
+        リンク
+-------------------- */
+
+a {
+  color: var(--theme-color);
+  text-decoration: none;
+  transition: color 0.2s ease; /* ホバー時にふわっと色を変える */
+}
+
+a:hover {
+  color: #004499; /* マウスを乗せたときは少し濃い青に */
+  text-decoration: underline;
+}
+
+/* --------------------
+        リスト
+-------------------- */
+
+ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
+li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+}
+
+/* ★ から、スマートな「■（角丸）」に変更 */
+li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: var(--theme-color);
+  border-radius: 2px;
+}
+
+/* --------------------
+          表
+-------------------- */
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%; /* 幅を画面いっぱいに広げる */
+  margin-top: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* ほんのり影をつけて立体感アップ */
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+tr {
+  background-color: #fff;
+}
+
+tr:nth-child(2n) {
+  background-color: #fcfcfc;
+}
+
+th {
+  background: var(--theme-color);
+  color: #fff;
+  font-weight: 600;
+  width: 25%; /* 左側の見出し幅を固定 */
+  text-align: left;
+}
+
+th, td {
+  border: solid 1px #eef0f2;
+  padding: 12px 15px; /* 余白を少し広げて見やすく */
+}
